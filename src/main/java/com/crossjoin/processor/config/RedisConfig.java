@@ -11,7 +11,8 @@ public class RedisConfig {
     
     @Bean
     public LettuceConnectionFactory redisConnectionFactory() {
-        return new LettuceConnectionFactory(); //6379 default
+        //Both RedisTemplate and StringRedisTemplate will use the default connection
+        return new LettuceConnectionFactory(); //default: localhost:6379 
     }
 
     @Bean
