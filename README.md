@@ -24,7 +24,7 @@
 - `application.properties`:
   - `app.input-directory`: location of the directory that contains the input files.
   - `app.master-instance`: By design, only this instance writes to resultado.csv the results stored in Redis  
-  - `app.instance-id`: While all other instances read and process files in parallel, publishing results to Redis for aggregation  
+  - `app.instance-id`: All instances read and process files/lines in parallel, publishing results to Redis for aggregation  
   - `app.output-file`: Name of the output file
 
 1. **First process:** `java "-Dapp.instance-id=1" -jar target/processor-1.0.jar`
