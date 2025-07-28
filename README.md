@@ -24,10 +24,11 @@
 - `application.properties`:
   - `app.input-directory`: location of the directory that contains the input files.
   - `app.master-instance`: By design, only this instance writes to resultado.csv the results stored in Redis  
-  - `app.instance-id`: While all other instances read and process files in parallel, publishing results to Redis for aggregation.
+  - `app.instance-id`: While all other instances read and process files in parallel, publishing results to Redis for aggregation  
   - `app.output-file`: Name of the output file
 
-1. **First process:** `java "-Dapp.instance-id=1" -jar target/processor-1.0.jar`  
-2. **Second and subsequent processes:** `java "-Dapp.instance-id=n" -jar target/processor-1.0.jar`
+1. **First process:** `java "-Dapp.instance-id=1" -jar target/processor-1.0.jar`
+  - By default the master instance is 1, but you can change this value and update the id accordingly
+3. **Second and subsequent processes:** `java "-Dapp.instance-id=n" -jar target/processor-1.0.jar`
      - Use a different n for each new process
      - n must be an Integer
