@@ -15,7 +15,7 @@
 - Run Redis after this, so the test Run does not create entries on the Redis Real-time Data Platform
 
 ```docker run -p 6379:6379 redis```
-- **Warning**: The keys in Redis are not being removed after processing. Ideally, they should be cleared, but the solution to do so while avoiding race conditions was not implemented. Therefore, please make sure to manually clear the Redis database before each experimental run to ensure accurate results. You can do this by restarting redis.
+- **Warning**: The keys in Redis are not being removed after processing. Ideally, they should be cleared, but the solution to do so while avoiding race conditions was not implemented. Therefore, please make sure to manually clear the Redis database before each experimental run to ensure accurate results. You can do this by restarting Redis.
 
 ### Run
 
