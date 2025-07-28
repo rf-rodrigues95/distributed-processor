@@ -79,6 +79,7 @@ public class ProducerConsumerService {
                 String[] parts = payload.split(",");
                 String key = parts[0];
                 String expr = parts[1];
+
                 int result = ExpressionEvaluator.evaluate(expr);
                 ops.increment("agg:" + key, result);
                 consumer.acknowledge(msg);
