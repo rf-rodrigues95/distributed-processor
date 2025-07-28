@@ -18,6 +18,9 @@ public class ResultWriter {
     @Value("${app.instance-id}")
     private int instanceId;
 
+    @Value("${app.master-instance}")
+    private int masterInstance;
+
     private final StringRedisTemplate redisTemplate;
 
     public ResultWriter(StringRedisTemplate redisTemplate) {
@@ -26,7 +29,7 @@ public class ResultWriter {
 
     @Scheduled(fixedDelay = 1000)
     public void flushIfDone() {
-        if (instanceId != 1) return;
+        if (instanceId != masterInstance) return;
 
         Set<String> keys = redisTemplate.keys("agg:*");
         if (keys == null || keys.isEmpty()) {
