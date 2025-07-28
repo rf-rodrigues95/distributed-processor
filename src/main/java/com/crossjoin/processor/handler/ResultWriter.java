@@ -21,6 +21,9 @@ public class ResultWriter {
     @Value("${app.master-instance}")
     private int masterInstance;
 
+    @Value("${app.output-file}")
+    private String outputFile;
+
     private final StringRedisTemplate redisTemplate;
 
     public ResultWriter(StringRedisTemplate redisTemplate) {
@@ -36,17 +39,17 @@ public class ResultWriter {
             System.out.println("No aggregation keys in Redis");
             return;
         }
-        try (FileWriter writer = new FileWriter("resultado.csv")) {
+        try (FileWriter writer = new FileWriter(outputFile)) {
             List<String> sortedKeys = new ArrayList<>(keys);
             Collections.sort(sortedKeys);
 
             for (String key : sortedKeys) {
                 String value = redisTemplate.opsForValue().get(key);
                 writer.write(key.replace("agg:", "") + "," + value + "\n");
-                System.out.println("Successfully wrote to resultado.csv");
+                System.out.println("Successfully wrote to " + outputFile);
             }
         } catch (IOException e) {
-            System.err.println("Error writing resultado.csv");
+            System.err.println("Error writing " + outputFile);
             e.printStackTrace();
         }
     }
