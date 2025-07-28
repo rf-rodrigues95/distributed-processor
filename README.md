@@ -6,7 +6,7 @@
 
 ### Compile
 
-```.../distributed-processor> docker-compose up``
+```.../distributed-processor> docker-compose up```
 - Launches a Docker container with Apache Pulsar in standalone mode
 
 - **Warning**: Launch Pulsar before compiling
