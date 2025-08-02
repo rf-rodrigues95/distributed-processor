@@ -1,8 +1,11 @@
 # Getting Started
 
-A beginner-level project developed to get hands-on experience with the Java Spring Boot framework and Redis as an in-memory data store.
+A beginner-level project developed in 2 days to get hands-on experience with the Java Spring Boot framework and Redis as an in-memory data store.
 
-This project was created as part of my initial learning journey with Spring Boot. It focuses on understanding core concepts such as RESTful API development, dependency injection, and basic integration with Redis for fast data retrieval and caching. 
+This project was created as part of my initial learning journey with Spring Boot.
+
+⚠️ Note: This project is not representative of the level of structure, polish, or design found in my other distributed systems work.
+Its primary value lies in the exploration of Spring Boot patterns and distributed messaging within time and support constraints.
 
 ## Project description
 
