@@ -1,5 +1,9 @@
 # Getting Started
 
+A beginner-level project developed to get hands-on experience with the Java Spring Boot framework and Redis as an in-memory data store.
+
+This project was created as part of my initial learning journey with Spring Boot. It focuses on understanding core concepts such as RESTful API development, dependency injection, and basic integration with Redis for fast data retrieval and caching. 
+
 ## Project description
 
 [See the PDF](./docs/Crossjoin_Solutions_-_Dev_Backend_Challenge.pdf)
